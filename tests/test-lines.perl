@@ -1,6 +1,6 @@
-my $FB = 'Fizz-Buzz';
-my $F  = 'Fizz';
-my $B  = 'Buzz';
+use constant A => 'Fizz';
+use constant B => 'Buzz';
+use constant C => 'Fizz-Buzz';
 
 my $lines = 100;
 my $count = 0;
@@ -8,16 +8,16 @@ my $count = 0;
 while (<>) {
     chomp;
     if ($.%3==0 && $.%5==0) {
-        unless ($_ eq $FB) {
-            fail ($FB);
+        unless ($_ eq C) {
+            fail (C);
         }
     } elsif ($.%5==0) {
-        unless ($_ eq $B) {
-            fail ($B);
+        unless ($_ eq B) {
+            fail (B);
         }
     } elsif ($.%3==0) {
-        unless ($_ eq $F) {
-            fail ($F);
+        unless ($_ eq A) {
+            fail (A);
         }
     } elsif (/^\d+$/) {
         unless ($. eq $_) {
